@@ -4,18 +4,35 @@
         // Write a JavaScript function that iterates the integers from 1 to 100. For multiples of 3 print "TEK" instead of the number and for multiples of 5, print "camp." For numbers that are multiples of both 3 and 5, print "TEKcamp."
 
         //your code...
-        function tekCamp() {}
-        // tekCamp();
-
-//test
+        function tekCamp() {
+            
+            let max = 100;
+            
+            for (i = 1; i <= max; i++) {
+                if (i % 3 == 0) {
+                    console.log("TEK");
+                }
+                if (i % 5 == 0) {
+                    console.log("camp");
+                }
+                if (((i % 3) && (i % 5 ) == 0)) {
+                    console.log("TEKcamp");
+                }
+            }
+        }
+        tekCamp();
+        
 
         /************************************************************************************/
         //Write a function that converts the current temperature from Fahrenheit to Celsius. 
 
         //your code...
         function farenheitCelsius() {
-
+            const fah = 10;
+            const cel = ((fah - 32) *  (5/9));
+            console.log(cel);
         }
+        farenheitCelsius();
 
 
 
@@ -25,8 +42,11 @@
 
         //your code...
         function celsiusFarenheit() {
-
+            const cel = 0;
+            const fah = ((cel) * (9/5) + 32);
+            console.log(fah);
         }
+        celsiusFarenheit();
 
 
 
@@ -37,8 +57,13 @@
 
         //your code...
         function canVote(age) {
-            return false;
+            if (age < 18) {
+                return false;
+            } else {
+                return true;
+            }
         }
+        canVote(21);
 
 
 
@@ -51,8 +76,12 @@
 
         //your code...
         function strToArr() {
-            return [];
+            const color = "blue red orange yellow green brown purple";
+            const colorArr = color.split(" ");
+            console.log(colorArr);
+            return colorArr;
         }
+        strToArr();
 
 
 
@@ -65,8 +94,11 @@
 
         //your code...
         function reversePhone(number) {
-            
+            const phoneArr = number.split(" ");
+            phoneArr.reverse();
+            console.log(phoneArr);
         }
+        reversePhone("7 5 5 0 6 5 1");
 
 
 
@@ -76,7 +108,20 @@
         // Write a function that returns a car object using some given info about your car. Required inputs are the make, model, year, and color.
 
         //your code...
-
+        function carObject(make, model, year, color) {
+            // Define desired object
+            let carObj = new Object();
+            carObj = {
+              make: "Mazda",
+              model: "Sedan",
+              year: 2010,
+              color: "black"
+            };
+            // Return it
+            console.log(carObj);
+            return carObj;
+          }
+          carObject();
 
 
 
@@ -88,7 +133,13 @@
         //example : [10,23,3,4] => function() => {10 : 'even', 23 : 'odd', 3 : 'odd', 4 : 'even'}
 
         //your code...
+        //NEED HELP
+        function keyValuePairs(nums){
+            for (i = 0; i <= nums.length, i++) {
 
+            }
+        }
+        keyValuePairs(3, 5, 10, 23, 40, 61);
 
 
 
