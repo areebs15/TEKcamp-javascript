@@ -134,12 +134,12 @@
 
         //your code...
         //NEED HELP
-        function keyValuePairs(nums){
-            for (i = 0; i <= nums.length, i++) {
+        //function keyValuePairs(nums){
+            //for (i = 0; i <= nums.length, i++) {
 
-            }
-        }
-        keyValuePairs(3, 5, 10, 23, 40, 61);
+            //}
+        //}
+        //keyValuePairs(3, 5, 10, 23, 40, 61);
 
 
 
@@ -151,27 +151,59 @@
         // Write a "for" loop that console.log()'s the first value in the  array, and every 3rd number, i.e. 0, 3, 6, 9: the zeroth, third, sixth, and ninth values.
 
         //your code...
+        for (i=0; i <= numbers.length; i++) {
+            if (numbers[i] % 3 == 0) {
+                console.log(numbers[i]);
+            }
+        }
 
 
 
         /************************************************************************************/
         const foodArray = [ 'potatoes', 'tamales', 'lemon','strawberries','chocolate', 'pudding', {program : 'TEKcamp'} ];
         //access the value of the last element of the array and set it to a variable called school.  print the school variable to the console.
+        let school = foodArray[foodArray.length - 1];
+        console.log(school);
+
 
         const adjectiveArray = [ 'salty', 'spicy', 'sour', 'sweet', 'rich','creamy','amazing'];
         // Using both the foodArray and the adjectiveArray, write "for" loop that console.log()'s a sentence for each corresponding value in the arrays. Add the word "is" or "are" depending on if the food is singular or plural.  i.e. "Potatoes are salty", "Lemon is sour".
+        function foodAdSentence() {
+            for (i=0; i < foodArray.length; i++) {
+                let str = foodArray[i];
+                let lastItem = "TEKcamp";
+                //push 
+                foodArray.pop([6]);
+                foodArray.push(lastItem);
+                //console.log(foodArray[6]);
 
+                if (str.charAt(str.length-1) === 's') {
+                //str.charAt(str.length-1);
+                    console.log(foodArray[i], "are", adjectiveArray[i]);
+                } else {
+                    console.log(foodArray[i], "is", adjectiveArray[i]);
+                } 
+            }
+        }
+        foodAdSentence();
 
         /************************************************************* */
         // Refactor the for() loop to be a while loop.
-
-
-        for(let i=0; i<10; i++) {
-            // console.log(" the value of i in the loop is : " + i);
-        }
+        //for(let i=0; i<10; i++) {
+                //console.log(" the value of i in the loop is : " + i);
+        //}
 
 
         //your code...
+        function whileLoop() {
+            let i = 0;
+            while(i < 10) {
+                console.log(" the value of i in the loop is : " + i);
+                i++;
+            }
+            
+        }
+        whileLoop();
 
 
 
@@ -181,6 +213,25 @@
         //use javascript to compute the value of the above statement. Each individual operation needs to be a function expression. run all the functions after defining them, and print the answer to the console.
 
         //your code...
+        function sumation(a, b, c) {
+            let tot = (a + b) * c;
+            return tot;
+        }
+        
+        function divide(sum) {
+            let tot = sum / 10;
+            return tot;
+        }
+        
+        function power(divTot) {
+            let tot = Math.pow(divTot, 2);
+            return tot;
+        }
+        let sum = sumation(30, 2, 20);
+        let divTot = divide(sum);
+        let final = power(divTot);
+        console.log(final);
+
 
 
         /************************************************************* */
