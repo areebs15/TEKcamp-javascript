@@ -239,7 +239,7 @@
 
         // ex : 3 is truthy, because it is a number, and numbers are type coerced as 'true' when performing logical (boolean) operations.
 
-        // 20
+        console.log(20);
         // 0
         // "zero";
         // const zero = 20;
@@ -258,8 +258,8 @@
         /************************************************************* */
         // Refactor the following code using a switch statement:
 
-        const day = "friday";
-
+        
+        /*
         if(day === "monday") {
             console.log("we got a long week ahead of us...");
         } else if(day === "tuesday") {
@@ -273,29 +273,58 @@
         } else {
             console.log("It's a weekend!")
         }
+        */
+
+        const day = "friday";
+
+        switch (day) {
+            case "monday":
+                console.log("we got a long week ahead of us...");
+                break;
+            case "tuesday":
+                console.log("tuesday's are still beterr than mondays, but LONG way to go still");
+                break;
+            case "wednesday":
+                console.log("We are smack dab in the middle of the week");
+                break;
+            case "thursday":
+                console.log("Thursday night... the mood is right");
+                break;
+            case "friday":
+                console.log("TGIF.  Friday truly is the best day of the week!");
+                break;
+            default:
+                console.log("It's a weekend!")
+        }
 
 
 
         /************************************************************* */
         // Refactor the following statements to use ternary expressions:
-
-        const age = 10;
-        if (age > 21) console.log("adult"); else {
-            console.log("minor");
-        }
-
-        if (age > 13 && age < 19) console.log('teen'); else {
-            console.log("not a teenager");
-        };
-
-        if (age > 65) console.log("retired"); else {
-            console.log("still working...");
-        }
+        function ternary() {
+            const age = 10;
+            let ageTitle = age > 21 ? 'adult' : 'minor';
+            console.log(ageTitle);
+            //if (age > 21) console.log("adult"); else {
+                //console.log("minor");
+            //}
+            ageTitle = age > 13 && age < 19 ? 'teen' : 'not a teenager';
+            console.log(ageTitle);
+            //if (age > 13 && age < 19) console.log('teen'); else {
+                //console.log("not a teenager");
+            //};
+            ageTitle = age > 65 ? 'retired' : 'still working...';
+            //if (age > 65) console.log("retired"); else {
+                //console.log("still working...");
+            //}
+            }
+        ternary();
 
 
         /************************************************************* */
         //Create an object literal representing yourself.  Set it equal to a variable that appropriately describes the object.  Include the following properties:
         /*
+        
         -name
         -age
         -gender
@@ -310,6 +339,15 @@
         */
 
         //your code...
+        let me = {
+            name: 'Alex',
+            age: 22,
+            gender: 'Male',
+            healthy: 'Yes',
+            hobbies: ['soccer', 'videogames', 'drawing'],
+            profession: 'TEKcamp',
+            education: 'Bachelor in IT'
+        }
 
 
 
@@ -372,6 +410,20 @@
         // Create an array of 20 randomly generated integers.  Calculate the sum of the elements in the array.
 
         //your code...
+        function randInt() {
+            const maxLen = 20
+            const randomArray = []
+            let sum = 0;
+            for(let i = 0; i < maxLen; i++) {
+                randomArray.push(Math.floor(Math.random()))
+            }
+            for (j = 0; j < randomArray.length; j++) {
+                sum = sum + randomArray[j];
+            }
+            console.log(sum);
+
+        }
+        randInt();
 
 
 
@@ -398,7 +450,39 @@
 
         function chessCalc(pieces) {
             //your code here
+            let pawn = 1;
+            let rook = 5;
+            let bishop = 3;
+            let knight = 3;
+            let queen = 9;
+            //let king = 'N/A';
+            let sum = 0;
+            for (i = 0; i < pieces.length; i++) {
+                switch (pieces[i]) {
+                    case "pawn":
+                        sum = sum + pawn;
+                        break;
+                    case "rook":
+                        sum = sum + rook;
+                        break;
+                    case "bishop":
+                        sum = sum + bishop;
+                        break;
+                    case "knight":
+                        sum = sum + knight;
+                        break;
+                    case "queen":
+                        sum = sum + queen;
+                        break;
+                    default: 
+                        sum = sum + 0;
+                }
+            }
+            console.log(sum);
         }
+
+        let pieceArr = ["queen", "rook", "pawn", "pawn"];
+        chessCalc(pieceArr);
 
 
 
