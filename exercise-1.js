@@ -392,8 +392,14 @@
         // Square every number in the array.  Store the squares in a new array.
 
         //your code...
-
-
+        function sqNum(number){
+            let arr = number;
+            const square_it = (element) => element ** 2;
+            arr = number.map(square_it);
+            console.log(arr);
+            //console.log(number);
+        }
+        sqNum(nums);
 
 
 
@@ -401,6 +407,10 @@
         //Remove all numbers that are less than 5.  Store the results in a new array.
 
         //your code...
+        const fivePlusNew = fivePlus.filter(function(number) {
+            return number < 5;
+          });
+        console.log(fivePlusNew);
 
 
 
@@ -425,12 +435,15 @@
         }
         randInt();
 
-
-
-
-
         const showNums = [12,22,33,44,55,66,77,88,99,101];
         //Print out the value of each number divided by 2.  There is no need to store the output in an array.
+        function arrDiv(nums) {
+            for (i=0; i < nums.length; i++) {
+                let val = nums[i] / 2;
+                console.log(val);
+            }
+        }
+        arrDiv(showNums);
 
 
 
@@ -491,6 +504,13 @@
 
         const ones = [1,11,111,1111,11111,111111,1111111,11111111,111111111,1111111111];
         //reverse the array, without modifying / `mutating` the ones array.
+        function reverseMutate() {
+            let newOnes = ones.slice().reverse();
+            console.log(ones);
+            console.log(newOnes);
+        }
+        reverseMutate();
+
 
 
 
@@ -499,6 +519,7 @@
 
         function performer(cb) {
             //code goes here
+
         }
 
 
@@ -637,14 +658,32 @@
         const numbersMixed = [2,23,1,2,1,1,1,2,2.5,20,200,2000,,{k:"val"},20000,19999,1878,140,23,4,"sk",true,true,"true-dat","nice","one","two","three","3","tea",[]];
 
         function maxNumber(numbers) {
-            //your code...
+            let onlyNumbers = [];
+            //console.log(numbers);
+            for (i=0; i < numbers.length; i++) {
+                if (typeof numbers[i] == 'number') {
+                    onlyNumbers.push(numbers[i]);
+                } else if (numbers[i] === "one") {
+                    onlyNumbers.push(1);
+                } else if (numbers[i] === "two") {
+                    console.log("two");
+                    onlyNumbers.push(2);
+                } else if (numbers[i] === "three") {
+                    onlyNumbers.push(3);
+                } else if (numbers[i] === "3"){
+                    onlyNumbers.push(3);                    
+                }
+            }
+            return onlyNumbers;
         }
+        let justNumbers = maxNumber(numbersMixed); // NEED TO FINISH
 
         //After the numbers array has been cleaned up to only have numbers in it, Write a function that sorts the modified numbers array.  Allow the function to sort the array in descending order as well.
 
         function sortNums(numbers,desc=false) {
-            //your code...
+            //numbers.sort(function(a, b){return a-b})
         };
+        //sortNums(justNumbers);
 
 
 
