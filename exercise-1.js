@@ -238,12 +238,56 @@
         //Determine whether the following values are "truthy" or "falsy".  console.log() the value, whether the value is 'truthy' or 'falsy', along with your reasoning why using String interpolation values : 
 
         // ex : 3 is truthy, because it is a number, and numbers are type coerced as 'true' when performing logical (boolean) operations.
+        function tF() {
+            
+            // 0
+            let z = 0;
+            let zVal = z ? 'is truthy': 'is falsey';
+            console.log(`0 ${zVal} because 0 is a false value`);
+            // "zero";
+            let zS = "zero";
+            let zSVal = zS ? 'is truthy': 'is falsey';
+            console.log(`"zero" ${zSVal} because it is a filled string`);
+            // const zero = 20;
+            const zero = 20;
+            let zeroVal = zero ? 'is truthy': 'is falsey';
+            console.log(`20 ${zeroVal} because it is a number despite the variable name being zero`);
+            // null
+            let n = null;
+            let nVal = n ? 'is truthy': 'is falsey';
+            console.log(`null ${nVal} because it is lacks any value at all`);
+            // "0"
+            let zStrNum = "0";
+            let zStrNumVal = zStrNum ? 'is truthy': 'is falsey';
+            console.log(`"0" ${zStrNumVal} because it is a string that contains a character`);
+            // !""
+            let excl = !"";
+            let exclVal = excl? 'is truthy': 'is falsey';
+            console.log(`!"" ${exclVal} because the "!" reverts the false value of the empty string to be true`);
 
-        console.log(20);
-        // 0
-        // "zero";
-        // const zero = 20;
-        // null
+            let brack = {};
+            let brackVal = brack? 'is truthy': 'is falsey';
+            console.log(`{} ${brackVal} because JavaScript recognizes it as truthy (honestly i dont understand why it is this way, it seems it should be falsey since no value is contained)`);
+
+            let fun = () => {console.log("hello TEKcamp!")};
+            let funVal = fun? 'is truthy': 'is falsey';
+            console.log(`() => {console.log("hello TEKcamp!")} ${funVal} because the function contains contains a return (console)`);
+
+            let onetwofive = 125;
+            let otfVal = onetwofive? 'is truthy': 'is falsey';
+            console.log(`125 ${otfVal} because it is a number and numbers other than 0 are truthy`);
+
+            let und = undefined;
+            let undVal =  und? 'is truthy': 'is falsey';
+            console.log(`undefined ${undVal} because it doesnt recognize a value being assigned`);
+
+            let empt = "";
+            let emptVal = empt? 'is truthy': 'is falsey';
+            console.log(`"" ${emptVal} because it it is an empty string`);
+        }
+        tF();
+        
+        
         // "0"
         // !""
         // {}
@@ -251,9 +295,6 @@
         // 125
         // undefined
         // ""
-
-
-
 
         /************************************************************* */
         // Refactor the following code using a switch statement:
@@ -346,7 +387,13 @@
             healthy: 'Yes',
             hobbies: ['soccer', 'videogames', 'drawing'],
             profession: 'TEKcamp',
-            education: 'Bachelor in IT'
+            education: 'Bachelor in IT',
+            nameF : function() {
+                return this.name + " " + "is learning JavaScript";
+              },
+            aboutMe : function() {
+                return this.name + " is " + this.age + " years old and is currently in the " + this.profession; 
+            }
         }
 
 
@@ -518,9 +565,9 @@
         //create a function called performer(cb) that takes in a callback function and runs that callback function.  The function should return the output of the callback function.
 
         function performer(cb) {
-            //code goes here
-
+            cb();
         }
+        performer(() => 1+1 === 2 ? console.log("the value is true") : console.log("the value is false"));
 
 
         /************************************************************* */
@@ -592,27 +639,67 @@
         // Find all devs older than 24
 
         //your code here...
+        function findOlder() {
+            //let arr = [];
+            //console.log(val);
+            for (i = 0; i < devs.length; i++) {
+                //let val = devs[i].age;
+                //arr.push(val);
+                if (devs[i].age > 24) {
+                    console.log(devs[i]);
+                }
+            }
+            //console.log(arr);
+        }
+        findOlder();
 
-
-
+        console.log("------------------------------------------")
         /************************** */  
         // Remove all people who are not developers (i.e. no tech stack)
 
         //your code here...
-
+        function removeNonDev() {
+            //let arr = devs;
+            //const actualDev = devs.filter(dev => devs.tech_stack === null);
+            //console.log(actualDev);
+            for (i = 0; i < devs.length; i++) {
+                if (devs[i].tech_stack === null) {
+                    devs.splice([i], 1);
+                }
+            }
+            console.log(devs);
+            //console.log(arr);
+        }
+        removeNonDev();
 
 
         /************************** */  
         // Calculate the total age of all the devs
 
         //your code here...
-
+        function totAge() {
+            let sum = 0;
+            for (i = 0; i < devs.length; i++) {
+                sum = devs[i].age + sum;
+            }
+            return sum;
+        }
+        let totAges = totAge();
+        console.log(totAges);
 
 
         /************************** */  
         // Find all female devs
 
         //your code here...
+        function femDev() {
+            for (i = 0; i < devs.length - 1; i++) {
+                if (devs[i].gender == 'f' || devs[i].gender == 'F') {
+                    console.log(devs[i]);
+                }
+            }
+        }
+        femDev();
 
 
         /************************** */  
