@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="timer.css">
-    <script src="timer-dom.js"></script>
+    <script defer src="timer-dom.js"></script>
     <title>Document</title>
 </head>
-<body>
+<body onload()>
     <main id="timer">
-        <p>0:00</p>
+        <p>00:00:00</p>
         <div class=timer-buttons>
-            <button>Start</button>
-            <button>Stop</button>
-            <button>Reset</button>
+            <button onclick="startTime();">Start</button>
+            <button onclick="stopTime();">Stop</button>
+            <button onclick="resetTime();">Reset</button>
         </div>
     </main>
 </body>
