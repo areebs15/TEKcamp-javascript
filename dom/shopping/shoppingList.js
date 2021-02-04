@@ -15,6 +15,7 @@
     buttonEle.addEventListener("click", btnClick);
     function btnClick() {
         let inputEleText = inputEle.value;
+        inputEle.value = '';
         let listEle = document.createElement('li');
         let spanEle = document.createElement('span');
         let btnEle = document.createElement('button');
@@ -23,8 +24,8 @@
         listEle.appendChild(btnEle);
         btnEle.textContent = 'delete';
         ulEle.appendChild(listEle);
-        btnEle.addEventListener("click", listEle.remove);
-        console.log(ulEle);
+        listEle.addEventListener("click", listEle.remove);
+        inputEle.focus();
     }
 
     //3. Inside the function body, start off by storing the current value of the input element in a variable.
