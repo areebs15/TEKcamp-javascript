@@ -105,13 +105,18 @@
         //example : [10,23,3,4] => function() => {10 : 'even', 23 : 'odd', 3 : 'odd', 4 : 'even'}
 
         //your code...
-        //NEED HELP
-        //function keyValuePairs(nums){
-            //for (i = 0; i <= nums.length, i++) {
-
-            //}
-        //}
-        //keyValuePairs(3, 5, 10, 23, 40, 61);
+        function keyValuePairs(nums){
+            const kv = {};
+            for (i = 0; i < nums.length; i++) {
+                if (nums[i] % 2 == 0) {
+                    kv[nums[i]] = "even";
+                } else {
+                    kv[nums[i]] = "odd";
+                }
+            }
+            console.log(kv);
+        }
+        keyValuePairs([3, 5, 10, 23, 40, 61]);
 
         /************************************************************************************/
         const numbers = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
@@ -346,9 +351,6 @@
                 return this.name + " is " + this.age + " years old and is currently in the " + this.profession; 
             }
         }
-
-
-
         /************************************************************* */
 
         {
@@ -844,9 +846,7 @@
             let value = years(4);
             //console.log(value + message);
             return value;
-        }
-        let futureValue = stockGain(600);
-        
+        }        
         // Once finished, declare a variable called futureValue that holds your stockGain function and enter any amount for the 
         //cost basis and a number for the number of years.  Run the function returned by the higher order function to display the future value of the stock.  
 
